@@ -1,0 +1,44 @@
+{
+    "name": "custom-start",
+    "version": "1.0.0",
+    "description": "Custom Start Page Extension for Microsoft Edge",
+    "main": "src/background/background.js",
+    "scripts": {
+        "start": "webpack --watch --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
+        "build:dev": "webpack --config webpack.dev.js",
+        "lint": "eslint src/**/*.{js,ts}",
+        "format": "prettier --write src/**/*.{js,ts,css,html}",
+        "type-check": "tsc --noEmit",
+        "clean": "rimraf dist"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.22.5",
+        "@babel/preset-env": "^7.22.5",
+        "@babel/preset-typescript": "^7.22.5",
+        "@types/chrome": "^0.0.241",
+        "@typescript-eslint/eslint-plugin": "^5.59.11",
+        "@typescript-eslint/parser": "^5.59.11",
+        "babel-loader": "^9.1.2",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.8.1",
+        "eslint": "^8.42.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "html-webpack-plugin": "^5.5.3",
+        "prettier": "^2.8.8",
+        "rimraf": "^5.0.1",
+        "style-loader": "^3.3.3",
+        "ts-loader": "^9.4.3",
+        "typescript": "^5.1.3",
+        "webpack": "^5.86.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-merge": "^5.9.0"
+    },
+    "dependencies": {
+        "webextension-polyfill": "^0.10.0"
+    }
+}

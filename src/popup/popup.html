@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Start Settings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="popup-container">
+        <header class="popup-header">
+            <h1>CustomStart Settings</h1>
+        </header>
+
+        <main class="popup-content">
+            <!-- Sección de Fondo -->
+            <section class="settings-section" id="background-settings">
+                <h2>Background</h2>
+                <div class="setting-group">
+                    <label>
+                        <input type="radio" name="bgType" value="color" checked>
+                        Color
+                    </label>
+                    <input type="color" id="bgColor" value="#f0f0f0">
+
+                    <label>
+                        <input type="radio" name="bgType" value="image">
+                        Image
+                    </label>
+                    <input type="file" id="bgImage" accept="image/*">
+                </div>
+
+                <div class="setting-group">
+                    <label>
+                        <input type="checkbox" id="slideshowEnabled">
+                        Enable Slideshow
+                    </label>
+                    <div id="slideshow-settings" class="hidden">
+                        <label>Interval (minutes):
+                            <input type="number" id="slideshowInterval" min="1" max="60" value="5">
+                        </label>
+                        <div id="slideshow-images"></div>
+                        <button id="addImage">Add Image</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Grid -->
+            <section class="settings-section" id="grid-settings">
+                <h2>Grid Layout</h2>
+                <div class="setting-group">
+                    <label>Cell Size (px):
+                        <input type="number" id="cellSize" min="50" max="200" value="100">
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Grid Margin (px):
+                        <input type="number" id="gridMargin" min="0" max="50" value="10">
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Columns:
+                        <input type="number" id="gridColumns" min="1" max="24" value="12">
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>Rows:
+                        <input type="number" id="gridRows" min="1" max="12" value="6">
+                    </label>
+                </div>
+            </section>
+
+            <!-- Sección de Widgets -->
+            <section class="settings-section" id="widget-settings">
+                <h2>Widgets</h2>
+                <div class="widget-actions">
+                    <button id="addWidget">Add Widget</button>
+                    <select id="widgetType">
+                        <option value="ICON">Icon</option>
+                        <option value="NOTE">Note</option>
+                        <option value="TASKLIST">Task List</option>
+                        <option value="BOOKMARK">Bookmark</option>
+                        <option value="IMAGE">Image</option>
+                    </select>
+                </div>
+                <div id="widgets-list"></div>
+            </section>
+        </main>
+
+        <footer class="popup-footer">
+            <button id="saveSettings" class="primary">Save Settings</button>
+            <button id="resetSettings">Reset to Default</button>
+        </footer>
+    </div>
+</body>
+
+</html>

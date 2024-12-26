@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body>
+    <header class="toolbar">
+        <div class="toolbar-left">
+            <button id="toggleEditMode" class="toolbar-button">
+                <span class="icon">✎</span>
+                <span class="label">Edit Mode</span>
+            </button>
+        </div>
+        <div class="toolbar-center">
+            <div class="search-box">
+                <input type="text" placeholder="Search or enter web address">
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <button id="addWidget" class="toolbar-button">
+                <span class="icon">+</span>
+                <span class="label">Add Widget</span>
+            </button>
+            <button id="openSettings" class="toolbar-button">
+                <span class="icon">⚙</span>
+                <span class="label">Settings</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <div id="grid" class="custom-grid"></div>
+    </main>
+
+    <!-- Widget Template -->
+    <template id="widgetTemplate">
+        <div class="custom-widget">
+            <div class="widget-header">
+                <h3 class="widget-title"></h3>
+                <div class="widget-controls">
+                    <button class="edit-widget">✎</button>
+                    <button class="remove-widget">×</button>
+                </div>
+            </div>
+            <div class="widget-content"></div>
+        </div>
+    </template>
+
+    <!-- Add Widget Dialog -->
+    <dialog id="addWidgetDialog">
+        <h2>Add New Widget</h2>
+        <div class="widget-types">
+            <button data-type="icon" class="widget-type-button">
+                <span class="icon">🔗</span>
+                <span>Icon Link</span>
+            </button>
+            <button data-type="note" class="widget-type-button">
+                <span class="icon">📝</span>
+                <span>Note</span>
+            </button>
+            <button data-type="tasklist" class="widget-type-button">
+                <span class="icon">✓</span>
+                <span>Task List</span>
+            </button>
+            <button data-type="bookmark" class="widget-type-button">
+                <span class="icon">⭐</span>
+                <span>Bookmark</span>
+            </button>
+            <button data-type="image" class="widget-type-button">
+                <span class="icon">🖼</span>
+                <span>Image</span>
+            </button>
+        </div>
+        <div class="dialog-buttons">
+            <button class="cancel-button">Cancel</button>
+        </div>
+    </dialog>
+    </main>
+
+</html>
